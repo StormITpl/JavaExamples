@@ -1,0 +1,22 @@
+package stormit;
+
+option java_package = "pl.stormit.protobuf";
+option java_outer_classname = "UserProtos";
+
+message User {
+  required string name = 1;
+  optional string surname = 2;
+  required int32 age = 3;
+
+  enum UserType {
+    NORMAL = 0;
+    ADMIN = 1;
+  }
+
+  message Interest {
+    required string name = 1;
+  }
+
+  repeated Interest interests = 4;
+  required UserType userType = 5;
+} 
